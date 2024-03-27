@@ -6,6 +6,8 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'user\HomeController::index');
+$routes->get('shopping', 'user\HomeController::shopping');
+
 $routes->get('error/404', function(){
     return view('errors/html/error_404');
 });

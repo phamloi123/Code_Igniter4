@@ -45,4 +45,7 @@ class MenuService extends BaseService
         $meta = end($cut_meta); // Lấy phần tử cuối cùng của mảng
         return $meta;
     }
+    public function getAllMenu(){
+        return $this->menu->findAll();
+    }
 }

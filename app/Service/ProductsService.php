@@ -26,7 +26,14 @@ class ProductsService extends BaseService
     {
         return $this->products->where('id', $id)->first();
     }
-
+    public function getProductsByDate()
+    {
+        return $this->products->orderBy('time', 'DESC')->limit(10)->findAll();
+    }
+    public function getProductsBySold()
+    {
+        return $this->products->orderBy('sold', 'DESC')->limit(10)->findAll();
+    }
 
     //CẬP NHẬT SẢN PHẨM
     public function updateProInfo($requestData)
