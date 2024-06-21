@@ -216,7 +216,6 @@ class ProductsService extends BaseService
                     ];
                 }
             }
-            $this->products->save($dataSave);
             try {
                 $this->products->save($dataSave);
                 return [
