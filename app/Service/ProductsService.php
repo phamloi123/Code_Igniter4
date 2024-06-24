@@ -18,9 +18,9 @@ class ProductsService extends BaseService
         $this->products->protect(false);
         $this->menu = new MenuService();
     }
-    public function getAllProducts()
+    public function getProductsForPaginate()
     {
-        return $this->products->findAll();
+        return $this->products->paginate(9);
     }
     public function getProductsByID($id)
     {
@@ -34,6 +34,11 @@ class ProductsService extends BaseService
     {
         return $this->products->orderBy('sold', 'DESC')->limit(10)->findAll();
     }
+    public function getPager()
+    {
+        return $this->products->pager;  
+    }
+
 
     //CẬP NHẬT SẢN PHẨM
     public function updateProInfo($requestData)

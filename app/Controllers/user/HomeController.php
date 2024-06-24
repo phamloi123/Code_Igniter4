@@ -35,7 +35,9 @@ class HomeController extends BaseController
         $data = [];
         $dataLayout['menu'] = $this->menu->getAllMenu();
         $dataLayout['category'] = $this->category->getAllCategory();
-        $dataLayout['products'] = $this->products->getAllProducts();
+        $dataLayout['products'] = $this->products->getProductsForPaginate();
+        $dataLayout['pager'] = $this->products->getPager();
+        // dd($dataLayout['pager']);
         $data = $this->loadMasterLayoutUser($data, "Katty's Campus | Shopping", 'user/pages/shopping',$dataLayout );
         return view('user/main', $data);
     }

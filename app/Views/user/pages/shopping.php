@@ -10,7 +10,7 @@
                                 <h2>Category</h2>
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb justify-content-center">
-                                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                        <li class="breadcrumb-item"><a href="/">Home</a></li>
                                         <li class="breadcrumb-item"><a href="categories.html#">Category</a></li>
                                     </ol>
                                 </nav>
@@ -197,9 +197,11 @@
                             <?php endforeach ?>
                         </div>
                     </div>
+                <div style="display: flex; justify-content: center; padding-top: 10px">
+                    <?= $pager->links('default', 'custom_pagination')  ?>
+                </div>
                 </div>
             </div>
         </div>
     </div>
-
 </main>

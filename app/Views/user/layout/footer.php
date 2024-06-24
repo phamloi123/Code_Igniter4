@@ -22,9 +22,9 @@
                         <div class="col-xxl-2 col-xl-2 col-lg-4">
 
                             <div class="footer-social">
-                                <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook"></i></a>
-                                <a href="index.html#"><i class="fab fa-instagram"></i></a>
-                                <a href="index.html#"><i class="fab fa-youtube"></i></a>
+                                <a href="https://www.facebook.com/loi.huus"><i class="fab fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/digitique3/"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.youtube.com/channel/UC5NjtbYoN5jQkcGcjET1QGA"><i class="fab fa-youtube"></i></a>
                             </div>
                         </div>
                     </div>
@@ -43,63 +43,27 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>Shop Men</h4>
-                                <ul>
-                                    <li><a href="index.html#">Clothing Fashion</a></li>
-                                    <li><a href="index.html#">Winter</a></li>
-                                    <li><a href="index.html#">Summer</a></li>
-                                    <li><a href="index.html#">Formal</a></li>
-                                    <li><a href="index.html#">Casual</a></li>
-                                </ul>
+                    <?php $tam = 0 ?>
+                    <?php foreach ($menu as $mn) : ?>
+                        <?php if ($tam > 0 && $tam < 5) : ?>
+                            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                                <div class="single-footer-caption mb-50">
+                                    <div class="footer-tittle">
+                                        <h4><?= $mn['name'] ?></h4>
+                                        <ul>
+                                            <?php foreach ($category as $cate) : ?>
+                                                <?php if ($cate['parent'] == $mn['id']) : ?>
+                                                    <li><a href="index.html#"><?= $cate['name'] ?></a></li>
+                                                <?php endif ?>
+                                            <?php endforeach ?>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>Shop Women</h4>
-                                <ul>
-                                    <li><a href="index.html#">Clothing Fashion</a></li>
-                                    <li><a href="index.html#">Winter</a></li>
-                                    <li><a href="index.html#">Summer</a></li>
-                                    <li><a href="index.html#">Formal</a></li>
-                                    <li><a href="index.html#">Casual</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>Baby Collection</h4>
-                                <ul>
-                                    <li><a href="index.html#">Clothing Fashion</a></li>
-                                    <li><a href="index.html#">Winter</a></li>
-                                    <li><a href="index.html#">Summer</a></li>
-                                    <li><a href="index.html#">Formal</a></li>
-                                    <li><a href="index.html#">Casual</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>Quick Links</h4>
-                                <ul>
-                                    <li><a href="index.html#">Track Your Order</a></li>
-                                    <li><a href="index.html#">Support</a></li>
-                                    <li><a href="index.html#">FAQ</a></li>
-                                    <li><a href="index.html#">Carrier</a></li>
-                                    <li><a href="index.html#">About</a></li>
-                                    <li><a href="index.html#">Contact Us</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                        <?php endif ?>
+                        <?php $tam = $tam + 1;
+                        echo $tam ?>
+                    <?php endforeach ?>
                 </div>
             </div>
         </div>
@@ -112,7 +76,7 @@
                             <div class="footer-copy-right text-center">
                                 <p>Copyright &copy;<script>
                                         document.write(new Date().getFullYear());
-                                    </script> All rights reserved | This template is made with <i class="fa fa-heart color-danger" aria-hidden="true"></i> by <a href="../../colorlib_default.html" target="_blank" rel="nofollow noopener">Colorlib</a></p>
+                                    </script> Sản phẩm Website bán hàng online <i class="fa fa-heart color-danger" aria-hidden="true"></i> by <a href="https://www.facebook.com/loi.huus" target="_blank" rel="nofollow noopener">Phạm Hữu Lợi</a></p>
                             </div>
                         </div>
                     </div>

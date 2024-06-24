@@ -11,7 +11,7 @@
                                 <span>Fashion Sale</span>
                                 <h1 data-animation="bounceIn" data-delay="0.2s">Minimal Menz Style</h1>
                                 <p data-animation="fadeInUp" data-delay="0.4s">Consectetur adipisicing elit. Laborum fuga incidunt laboriosam voluptas iure, delectus dignissimos facilis neque nulla earum.</p>
-                                <a href="index.html#" class="btn_1 hero-btn" data-animation="fadeInUp" data-delay="0.7s">Shop Now</a>
+                                <a href="shopping" class="btn_1 hero-btn" data-animation="fadeInUp" data-delay="0.7s">Shop Now</a>
                             </div>
                         </div>
                     </div>
@@ -26,7 +26,7 @@
                                 <span>Fashion Sale</span>
                                 <h1 data-animation="bounceIn" data-delay="0.2s">Minimal Menz Style</h1>
                                 <p data-animation="fadeInUp" data-delay="0.4s">Consectetur adipisicing elit. Laborum fuga incidunt laboriosam voluptas iure, delectus dignissimos facilis neque nulla earum.</p>
-                                <a href="index.html#" class="btn_1 hero-btn" data-animation="fadeInUp" data-delay="0.7s">Shop Now</a>
+                                <a href="shopping" class="btn_1 hero-btn" data-animation="fadeInUp" data-delay="0.7s">Shop Now</a>
                             </div>
                         </div>
                     </div>
@@ -110,9 +110,9 @@
                                             <?php endif ?>
                                         </a>
                                         <div class="socal_icon">
-                                            <a href="index.html#"><i class="ti-shopping-cart"></i></a>
-                                            <a href="index.html#"><i class="ti-heart"></i></a>
-                                            <a href="index.html#"><i class="ti-zoom-in"></i></a>
+                                            <a href="/"><i class="ti-shopping-cart"></i></a>
+                                            <a href="/"><i class="ti-heart"></i></a>
+                                            <a href="/"><i class="ti-zoom-in"></i></a>
                                         </div>
                                     </div>
                                     <div class="properties-caption properties-caption2">
@@ -201,11 +201,16 @@
                     <div class="properties pb-30">
                         <div class="properties-card">
                             <div class="properties-img">
-                                <a href="pro-details.html"><img src="<?= $pro['meta'] ?>" alt></a>
+                                <a href="pro-details.html">
+                                    <img src="<?= $pro['meta'] ?>" alt>
+                                    <?php if ($pro['sale'] > 0) : ?>
+                                        <span class="sale-tag">-<?= ceil((1 - $pro['sale'] / $pro['price']) * 100) ?>%</span>
+                                    <?php endif ?>
+                                </a>
                                 <div class="socal_icon">
-                                    <a href="index.html#"><i class="ti-shopping-cart"></i></a>
-                                    <a href="index.html#"><i class="ti-heart"></i></a>
-                                    <a href="index.html#"><i class="ti-zoom-in"></i></a>
+                                    <a href="/"><i class="ti-shopping-cart"></i></a>
+                                    <a href="/"><i class="ti-heart"></i></a>
+                                    <a href="/"><i class="ti-zoom-in"></i></a>
                                 </div>
                             </div>
                             <div class="properties-caption properties-caption2">

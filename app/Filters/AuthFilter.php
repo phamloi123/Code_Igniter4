@@ -17,6 +17,9 @@ class AuthFilter implements FilterInterface
             }
             return redirect('login');
         }
+        if($session->get('user_login') && $session->get('user_login')['loai'] !=0){
+            return redirect('/');
+        }
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)

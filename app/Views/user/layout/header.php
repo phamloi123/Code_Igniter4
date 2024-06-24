@@ -18,16 +18,16 @@
                         <div class="d-flex justify-content-between flex-wrap align-items-center">
                             <div class="header-info-left">
                                 <ul>
-                                    <li><a href="index.html#">About Us</a></li>
-                                    <li><a href="index.html#">Privacy</a></li>
-                                    <li><a href="index.html#">FAQ</a></li>
-                                    <li><a href="index.html#">Careers</a></li>
+                                    <li><a href="/">About Us</a></li>
+                                    <li><a href="/">Privacy</a></li>
+                                    <li><a href="/">FAQ</a></li>
+                                    <li><a href="/">Careers</a></li>
                                 </ul>
                             </div>
                             <div class="header-info-right d-flex">
                                 <ul class="order-list">
-                                    <li><a href="index.html#">My Wishlist</a></li>
-                                    <li><a href="index.html#">Track Your Order</a></li>
+                                    <li><a href="/">My Wishlist</a></li>
+                                    <li><a href="/">Track Your Order</a></li>
                                 </ul>
                                 <ul class="header-social">
                                     <li><a href="https://www.facebook.com/loi.huus"><i class="fab fa-facebook"></i></a></li>
@@ -46,7 +46,7 @@
                 <div class="menu-wrapper">
 
                     <div class="logo">
-                        <a href="index.html"><img src="assets/user/img/logo/logo.png" alt></a>
+                        <a href="/"><img src="assets/user/img/logo/logo.png" alt></a>
                     </div>
 
                     <div class="main-menu d-none d-lg-block">
@@ -94,9 +94,15 @@
                                 </div>
                             </li>
                             <li style="display: flex; align-items: center; font-size: 18px;">
-                                <a href="login.html" style="color:black">
-                                    <?= session()->get('user_login') ? session()->get('user_login')['name'] : '<span class="flaticon-user">' ?>
-                                </a>
+                                <?php if (!session()->get('user_login')) : ?>
+                                    <a href="login" style="color:black">
+                                        <span class="flaticon-user">'
+                                    </a>
+                                <?php else : ?>
+                                    <a href="login" style="color:black">
+                                        <?= session()->get('user_login')['name'] ?>
+                                    </a>
+                                <?php endif ?>
                             </li>
                             <li class="cart"><a href="cart.html"><span class="flaticon-shopping-cart"></span></a> </li>
                         </ul>
@@ -117,7 +123,7 @@
             </div>
         </div>
         <div class="header-bottom text-center">
-            <p>Sale Up To 50% Biggest Discounts. Hurry! Limited Perriod Offer <a href="index.html#" class="browse-btn">Shop Now</a></p>
+            <p>Đón đầu xu hướng thời trang giới trẻ - Tự tin thể hiện phong cách - <a href="shopping" class="browse-btn">Shop Now</a></p>
         </div>
     </div>
 </header>
